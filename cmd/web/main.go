@@ -1,43 +1,27 @@
 package main
 
 import (
-	"html/template"
+	"flag"
 	"log"
 	"net/http"
 	"time"
 )
 
-func hello(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		http.NotFound(w, r)
-		return
-	}
-
-	tmpl, err := template.ParseFiles("./ui/html/base.tmpl")
-	if err != nil {
-		http.Error(w, http.StatusText(http.StatusInternalServerError),
-			http.StatusInternalServerError)
-		return
-	}
-
-	err = tmpl.Execute(w, nil)
-	if err != nil {
-		http.Error(w, http.StatusText(http.StatusInternalServerError),
-			http.StatusInternalServerError)
-	}
+type application struct {
 }
 
 func main() {
-	mux := http.NewServeMux()
+	addr := flag.String("addr", ":8080", "HTTP Network Address")
+	flag.Parse()
+	app := application{}
 	server := &http.Server{
-		Addr:         ":8080",
-		Handler:      mux,
+		Addr:         *addr,
+		Handler:      app.routes(),
 		ReadTimeout:  15 * time.Second,
 		WriteTimeout: 15 * time.Second,
 	}
 
-	mux.HandleFunc("/", hello)
-	log.Println("listening on :8080")
+	log.Printf("listening on %s", *addr)
 
 	err := server.ListenAndServe()
 	log.Fatal(err)

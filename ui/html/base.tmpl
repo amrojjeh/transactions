@@ -1,12 +1,14 @@
+{{define "base"}}
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Transactions</title>
+  <title>{{template "title" .}}</title>
 </head>
 
 <body>
-  <p>THIS IS COOL!!!</p>
+  {{template "main" .}}
 </body>
 
 </html>
+{{end}}

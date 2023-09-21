@@ -1,0 +1,70 @@
+{{define "title"}}Transactions{{end}}
+
+{{define "main"}}
+<nav>
+	<p></p>
+	<p>Transactions</p>
+	<div class="profile">
+		<p>Peter Parker</p>
+		<div class="actions">
+			<p>Settings</p>
+			<p>Sign out</p>
+		</div>
+	</div>
+</nav>
+<main>
+	<form method="get">
+		<fieldset>
+			<legend>Accounts</legend>
+			<input type="checkbox" name="account" id="account1">
+			<label for="account1">BofA - 3241 ($300)</label>
+			<input type="checkbox" name="account" id="account2">
+			<label for="account2">Discover - 2314 ($700)</label>
+		</fieldset>
+		<fieldset>
+			<legend>Date</legend>
+			<input type="radio" name="date" id="date1" value="1m">
+			<label for="date1">Last month</label>
+
+			<input type="radio" name="date" id="date2" value="12m">
+			<label for="date1">Last 12 months</label>
+
+			<input type="radio" name="date" id="date3" value="all">
+			<label for="date1">All</label>
+		</fieldset>
+		<button type="submit">Filter</button>
+	</form>
+	<table>
+		<thead>
+			<th>Tags</th>
+			<th>Date</th>
+			<th>Account</th>
+			<th>Merchant</th>
+			<th>Context</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>groceries, veggies</td>
+				<td>09/20/2023</td>
+				<td>BofA - 3241</td>
+				<td>HEB</td>
+				<td>for a vegan diet I'll totally follow</td>
+			</tr>
+			<tr>
+				<td>groceries, veggies</td>
+				<td>09/20/2023</td>
+				<td>BofA - 3241</td>
+				<td>HEB</td>
+				<td>for a vegan diet I'll totally follow</td>
+			</tr>
+			<tr>
+				<td>groceries, veggies</td>
+				<td>09/20/2023</td>
+				<td>BofA - 3241</td>
+				<td>HEB</td>
+				<td>for a vegan diet I'll totally follow</td>
+			</tr>
+		</tbody>
+	</table>
+</main>
+{{end}}
