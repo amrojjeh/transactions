@@ -2,18 +2,30 @@ package main
 
 import (
 	"flag"
-	"log"
+	"html/template"
+	"log/slog"
 	"net/http"
+	"os"
 	"time"
 )
 
 type application struct {
+	logger    *slog.Logger
+	templates map[string]*template.Template
 }
 
 func main() {
 	addr := flag.String("addr", ":8080", "HTTP Network Address")
 	flag.Parse()
-	app := application{}
+	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
+	app := application{
+		logger: logger,
+	}
+	err := app.cacheTemplates()
+	if err != nil {
+		logger.Error("couldn't cache templates", slog.String("error", err.Error()))
+		os.Exit(1)
+	}
 	server := &http.Server{
 		Addr:         *addr,
 		Handler:      app.routes(),
@@ -21,8 +33,9 @@ func main() {
 		WriteTimeout: 15 * time.Second,
 	}
 
-	log.Printf("listening on %s", *addr)
+	logger.Info("server is listening", slog.String("addr", *addr))
 
-	err := server.ListenAndServe()
-	log.Fatal(err)
+	err = server.ListenAndServe()
+	logger.Error("server error", slog.String("error", err.Error()))
+	os.Exit(1)
 }
