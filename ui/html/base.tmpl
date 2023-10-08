@@ -4,9 +4,10 @@
 
 <head>
   <title>{{template "title" .}}</title>
+  <script type="text/javascript" src="/static/htmx@1.9.6.min.js"></script>
 </head>
 
-<body>
+<body hx-boost="true">
   {{template "main" .}}
 </body>
 
