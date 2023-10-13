@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Transactions</title>
+</head>
+<body>
+    <main>
+        <section class="wrapper">
+            <div class="register-main">
+                <h1 class="register-main__header-1">Register</h1>
+                <form class="register-form" action="#" method="#">
+                    <div class="register-form__username">
+                        <label class="register-form__label" for="email">Email</label>
+                        <input
+                            title=""
+                            placeholder=""
+                            class="register-form__input"
+                            type="email"
+                            name="email"
+                            required/>
+                    </div>
+                    <div class="register-form__password">
+                        <label class="register-form__label" for="password">Password</label>
+                        <input
+                            title=""
+                            placeholder=""
+                            class="register-form__input"
+                            type="password"
+                            name="password"
+                            pattern="[^a-zA-Z0-9]+{8,}"
+                            required/>
+                    </div>
+                    <div class="register-form__confirm-password">
+                        <label class="register-form__label" for="confirm-password">Confirm Password</label>
+                        <input
+                            title=""
+                            placeholder=""
+                            class="register-form__input"
+                            type="password"
+                            name="confirm-password"
+                            pattern="[^a-zA-Z0-9]+*{8,}"
+                            required/>
+                    </div>
+                    <a href="#" class="register-form__link">Forgot password</a>
+                    <button class="register-form__button">
+                        <svg
+                            class="register-form__button-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path d="M4,10V14H13L9.5,17.5L11.92,19.92L19.84,12L11.92,4.08L9.5,6.5L13,10H4Z" /></svg>
+                        </button>
+                </form>
+            </div>
+            <div class="register-support">
+                <!-- stuff goes here -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
