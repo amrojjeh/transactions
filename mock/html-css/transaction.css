@@ -25,12 +25,12 @@ html, body, input {
 @media (orientation: landscape) {
     @font-face {
         font-family: "KarlaRegular";
-        src: url("fonts/karla/Karla-Regular.ttf");
+        src: url("../fonts/karla/Karla-Regular.ttf");
     }
     
     @font-face {
         font-family: "KarlaBold";
-        src: url("fonts/karla/Karla-Bold.ttf");
+        src: url("../fonts/karla/Karla-Bold.ttf");
     }
     
     .application-wrapper {
