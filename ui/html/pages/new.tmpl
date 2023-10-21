@@ -1,0 +1,20 @@
+{{define "title"}}New Transaction{{end}}
+
+{{define "main"}}
+<h1>New Transaction</h1>
+<form action="/transaction/new" method="POST">
+	Transaction date: <input name="tdate" type="text">
+	<br>
+	Posted date: <input name="pdate" type="text" />
+	<br>
+	From: <input name="from" type="text" />
+	<br>
+	To: <input name="to" type="text" />
+	<br>
+	Context: <input name="context" type="text" />
+	<br>
+	Tags: <input name="tags" type="text" />
+	<br>
+	<button type="submit">Create transaction</button>
+</form>
+{{end}}
