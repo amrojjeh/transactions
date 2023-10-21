@@ -122,7 +122,7 @@ input {
   }
 
   .application-body__table-wrapper {
-    background: #3F3F3F;
+    background: #FFF;
   }
 
   .application-body__table-titles {
@@ -141,7 +141,6 @@ input {
   .application-body__table-rows {
     display: grid;
     grid-template-rows: repeat(17, 48px);
-    overflow-y: scroll;
   }
 
   .application-body__table-titles>div:hover {
@@ -151,7 +150,7 @@ input {
 
   .table-row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     text-align: center;
     justify-content: center;
     align-content: center;
@@ -256,7 +255,6 @@ input {
 
   /* custom checkbox. */
   .results-filter__checkbox {
-    appearance: none;
     width: 1rem;
     height: 1rem;
     border: 2px solid #FFF;
@@ -286,7 +284,6 @@ input {
 
   /* custom radio button. */
   .results-filter__radio {
-    appearance: none;
     width: 1rem;
     height: 1rem;
     border: 2px solid #FFF;

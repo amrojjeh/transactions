@@ -1,8 +1,7 @@
 {{define "title"}}Transactions{{end}}
 
 {{define "main"}}
-<main>
-  <div class="application-wrapper">
+<main class="application-wrapper">
       <header class="application-header">
           <a class="application-header__link" href="#">
               Summary
@@ -54,21 +53,21 @@
                   <h6 class="results-filter__header-6">Accounts</h6>
                   <div class="results-filter__accounts">
                       <!-- sample accounts. -->
-                      <label for="date" class="results-filter__label">
+                      <label class="results-filter__label">
                           <input
                               type="checkbox"
                               name="date"
                               class="results-filter__checkbox">
                           Bank of America
                       </label>
-                      <label for="date" class="results-filter__label">
+                      <label class="results-filter__label">
                           <input
                               type="checkbox"
                               name="date"
                               class="results-filter__checkbox">
                               Discover
                       </label>
-                      <label for="all" class="results-filter__label">
+                      <label class="results-filter__label">
                           <input
                               type="checkbox"
                               name="date"
@@ -88,21 +87,21 @@
                   <hr class="results-filter__horizontal-line">
                   <h6 class="results-filter__header-6">Date</h6>
                   <div class="results-filter__date">
-                      <label for="date" class="results-filter__label">
+                      <label class="results-filter__label">
                           <input
                               type="radio"
                               name="date"
                               class="results-filter__radio">
                           Last 12 months
                       </label>
-                      <label for="date" class="results-filter__label">
+                      <label class="results-filter__label">
                           <input
                               type="radio"
                               name="date"
                               class="results-filter__radio">
                           Last month
                       </label>
-                      <label for="all" class="results-filter__label">
+                      <label class="results-filter__label">
                           <input
                               type="radio"
                               name="date"
@@ -116,6 +115,7 @@
               <div class="application-body__table-titles">
                   <div>Tags</div>
                   <div>Date</div>
+                  <div>Posted</div>
                   <div>Account</div>
                   <div>Merchant</div>
                   <div>Amount</div>
@@ -125,12 +125,14 @@
                   <div class="table-row">
                       <div>Grocery</div>
                       <div>June 3rd, 2023</div>
+                      <div>June 4rd, 2023</div>
                       <div>Discover</div>
                       <div>Costco</div>
                       <div>$83.25</div>
                   </div>
                   <div class="table-row">
                       <div>Hobby</div>
+                      <div>August 24th, 2023</div>
                       <div>August 24th, 2023</div>
                       <div>Discover</div>
                       <div>Amazon</div>
@@ -139,26 +141,11 @@
                   <div class="table-row">
                       <div>Bills</div>
                       <div>October 5th, 2023</div>
+                      <div><i>Not provided</i></div>
                       <div>Discover</div>
                       <div>Comcast</div>
                       <div>$85.00</div>
                   </div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
-                  <div class="table-row"></div>
               </div>
           </section>
           
@@ -172,6 +159,5 @@
               </button>
           </div>
       </section>
-  </div>
 </main>
 {{end}}
