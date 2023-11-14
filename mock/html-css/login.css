@@ -5,6 +5,9 @@
 }
 
 /* css reset */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 
 html, body, input {
     margin: 0;
@@ -12,8 +15,30 @@ html, body, input {
     border: none;
 }
 
-*, *:before, *:after {
-    box-sizing: border-box;
+html {
+    font-family: "KarlaRegular";
+    font-style: normal;
+    font-weight: 100;
+}
+
+body {
+    background: var(--color-background);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+textarea:focus, .login-form__input:focus {
+    outline: none;
+}
+
+@font-face {
+    font-family: "KarlaRegular";
+    src: url("../fonts/karla/Karla-Regular.ttf");
+}
+
+@font-face {
+    font-family: "KarlaBold";
+    src: url("../fonts/karla/Karla-Bold.ttf");
 }
 
 @media (orientation: portrait) {
@@ -21,22 +46,6 @@ html, body, input {
 }
 
 @media (orientation: landscape) {
-    html {
-        font-family: "KarlaRegular";
-        font-style: normal;
-        font-weight: 100;
-    }
-    
-    @font-face {
-        font-family: "KarlaRegular";
-        src: url("../fonts/karla/Karla-Regular.ttf");
-    }
-    
-    @font-face {
-        font-family: "KarlaBold";
-        src: url("../fonts/karla/Karla-Bold.ttf");
-    }
-    
     .wrapper {
         display: grid;
         grid-template-columns: repeat(2, 380px);
@@ -119,19 +128,9 @@ html, body, input {
         border-bottom: 2px solid #71D49F;
     }
     
-    textarea:focus, .login-form__input:focus {
-        outline: none;
-    }
-    
     .login-support {
         background: linear-gradient(180deg, #2D2E2E 0%, #32579E 100%);
         border-radius: 0px 10px 10px 0px;
         box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
-    }
-    
-    body {
-        background: var(--color-background);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
     }
 }

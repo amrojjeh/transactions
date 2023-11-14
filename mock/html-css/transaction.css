@@ -6,16 +6,40 @@
 }
 
 /* css reset */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 
 html, body, input {
     margin: 0;
     padding: 0;
     border: none;
-    height: 100%;
 }
 
-*, *:before, *:after {
-    box-sizing: border-box;
+html {
+    font-family: "KarlaRegular";
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+body {
+    background: var(--color-background);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+button {
+    font-family: "KarlaRegular";
+    font-size: 16px;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+textarea:focus, .application-header__search:focus {
+    outline: none;
 }
 
 @media (orientation: portrait) {
@@ -35,8 +59,7 @@ html, body, input {
     
     .application-wrapper {
         display: grid;
-        grid-template-rows: 72px 1fr 48px;
-        height: 100vh;
+        grid-template-rows: 72px 1fr;
         padding: 0.5rem;
     }
     
@@ -46,8 +69,8 @@ html, body, input {
         border-radius: 10px 10px 0px 0px;
         background: #FFF;
         text-align: center;
-        align-content: center;
         padding: 1rem;
+        border-bottom: 1px solid #DCDCDC;
     }
     
     .application-header__link {
@@ -75,10 +98,6 @@ html, body, input {
         background: #FFF;
         font-size: 18px;
         font-weight: bold;
-    }
-    
-    textarea:focus, .application-header__search:focus {
-        outline: none;
     }
     
     .application-header__options-icon {
@@ -115,7 +134,8 @@ html, body, input {
     
     .application-body {
         display: grid;
-        grid-template-columns: 1fr 3fr 96px;
+        grid-template-columns: minmax(120px, 240px) 3fr 96px;
+        height: calc(100vh - 200px);
     }
     
     .application-body__table-wrapper {
@@ -138,7 +158,9 @@ html, body, input {
     .application-body__table-rows {
         display: grid;
         grid-template-rows: repeat(17, 48px);
-        overflow-y: scroll;
+        overflow-x: auto;
+        overflow-y: auto;
+        height: calc(100vh - 200px);
     }
     
     .application-body__table-titles > div:hover {
@@ -157,9 +179,12 @@ html, body, input {
     }
 
     .table-row > div:first-child {
+        background: #FFF;
         border: 3px solid #D4D4DA;
         border-radius: 15px;
         box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        justify-self: center;
+        padding: 0 1rem;
     }
 
     .application-body__table-rows > div:hover {
@@ -179,10 +204,10 @@ html, body, input {
     .application-body__table-rows > div:nth-child(odd):hover,
     .application-body__table-rows > div:nth-child(even):hover {
         background: #b1b9db;
-        border-bottom: 1px solid #666ca5;
+        border-bottom: 1px solid #7980c5;
     }
 
-    .application-body__table-rows > div:nth-child(odd):hover::after,
+    /* .application-body__table-rows > div:nth-child(odd):hover::after,
     .application-body__table-rows > div:nth-child(even):hover::after {
         content: "Edit";
         font-size: 18px;
@@ -191,16 +216,16 @@ html, body, input {
         padding: 0.5rem;
         width: 96px;
         height: 48px;
-        position: absolute;
+        position: fixed;
         right: 0.5rem;
         color: #FFF;
-        background: #DA8556;
+        background: #FF7E35;
         border-bottom: 1px solid transparent;
-    }
+    } */
     
     .application__left-bar {
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 50px;
         background: #EAEAEA;
         border-radius: 0px 0px 0px 10px;
     }
@@ -209,17 +234,20 @@ html, body, input {
         background: linear-gradient(180deg, #2D2E2E 0%, #32579E 100%);
         color: #FFF;
         padding: 1rem;
+        overflow-y: auto;
     }
 
     .results-filter__accounts {
         display: grid;
         grid-template-rows: repeat(3, 1fr);
-        row-gap: 1rem;
+        row-gap: 0.5rem;
         font-family: "KarlaRegular";
+        align-items: center;
     }
 
     .results-filter__accounts-add {
-        background: red;
+        display: grid;
+        grid-template-columns: 24px 1fr;
     }
 
     .results-filter__acounts-add__icon {
@@ -228,16 +256,19 @@ html, body, input {
         height: 24px;
     }
 
-    .results-filter__account-add__button {
+    .results-filter__accounts-add__button {
         color: #FFF;
         background: none;
         font-size: 18px;
         cursor: pointer;
+        border: none;
+        padding: 0;
     }
     
     .results-filter__horizontal-line {
-        color: #FFF;
+        background: #435DA0;
         height: 1px;
+        border: none;
     }
     
     .results-filter__header-6 {
@@ -247,8 +278,24 @@ html, body, input {
     .results-filter__date {
         display: grid;
         grid-template-rows: repeat(3, 1fr);
-        row-gap: 1rem;
+        row-gap: 0.5rem;
         font-family: "KarlaRegular";
+    }
+
+    .tool-tip {
+        border-radius: 10px;
+        background: linear-gradient(180deg, #2E2E2E 0%, #5A5A5A 100%);
+        color: #FFF;
+        padding: 1rem;
+    }
+
+    .tool-tip__header-1 {
+        font-size: 24px;
+    }
+
+    .tool-tip__paragraph {
+        font-size: 18px;
+
     }
 
     /* custom checkbox. */
@@ -310,6 +357,33 @@ html, body, input {
     .results-filter__radio::checked::before {
         transform: scale(1);
     }
+
+    .results-filter__carousel-container {
+    }
+
+    .results-filter__carousel {
+        background: #2E2E2E;
+        height: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 20px);
+        column-gap: 20px;
+        justify-content: center;
+        border-radius: 0 0 0 10px;
+    }
+
+    .results-filter-carousel__circle {
+        background: #325393;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .results-filter-carousel__circle:hover {
+        filter: brightness(1.5);
+        cursor: pointer;
+    }
     
     .application__right-bar {
         display: grid;
@@ -324,19 +398,17 @@ html, body, input {
     
     .application-footer {
         background: #EAEAEA;
+        display: grid;
+        align-items: right;
     }
 
-    html {
-        font-family: "KarlaRegular";
-        font-style: normal;
-        font-weight: 100;
-        font-size: 18px;
+    .application-footer__button {
+        background: #35FF6E;
+        border: none;
     }
-    
-    body {
-        background: var(--color-background);
-        height: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+
+    .application-footer__button:hover {
+        background: #25A54A;
+        align-content: end;
     }
 }

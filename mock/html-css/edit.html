@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edit.css">
+    <title>Transactions</title>
+</head>
+<body>
+    <main>
+        <section class="wrapper">
+            <form class="edit-form" action="/transaction/edit" method="POST">
+                <h1 class="edit-form__header-1">Edit Transaction</h1>
+                <div>
+                    <label class="edit-form__label" for="tdate">Transaction date</label> 
+                    <input class="edit-form__input" name="tdate" type="date">
+                </div>
+                <div>
+                    <label class="edit-form__label" for="pdate">Posted date</label> 
+                    <input class="edit-form__input" name="pdate" type="date">
+                </div>
+                <div>
+                    <label class="edit-form__label" for="pdate">To</label> 
+                    <input class="edit-form__input" name="to" type="text">
+                </div>
+                <div>
+                    <label class="edit-form__label" for="pdate">Context</label> 
+                    <input class="edit-form__input" name="context" type="text">
+                </div>
+                <div>
+                    <label class="edit-form__label" for="tags">Tags</label> 
+                    <input class="edit-form__input" name="tags" type="text">
+                </div>
+                <div class="edit-form__button-menu">
+                    <button class="edit-form__secondary-button" type="submit">Remove</button>
+                    <button class="edit-form__primary-button" type="submit">Confirm</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

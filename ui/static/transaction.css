@@ -127,7 +127,7 @@ input {
 
   .application-body__table-titles {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     row-gap: 1rem;
     color: #FFF;
     list-style: none;
@@ -141,11 +141,13 @@ input {
   .application-body__table-rows {
     display: grid;
     grid-template-rows: repeat(17, 48px);
+    background: #3F3F3F;
   }
 
   .application-body__table-titles>div:hover {
     color: #BBB;
     cursor: pointer;
+    background: green;
   }
 
   .table-row {
@@ -196,7 +198,7 @@ input {
     position: absolute;
     right: 0.5rem;
     color: #FFF;
-    background: #DA8556;
+    background: #FF7E35;
     border-bottom: 1px solid transparent;
   }
 
@@ -221,7 +223,7 @@ input {
   }
 
   .results-filter__accounts-add {
-    background: red;
+    background: blue;
   }
 
   .results-filter__acounts-add__icon {

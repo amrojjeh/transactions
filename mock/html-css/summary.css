@@ -1,0 +1,41 @@
+:root {
+    --color-ui-input-border: #BEBEBE;
+    --color-ui-navigator: #2E2E2F;
+
+    --color-background: linear-gradient(180deg, #4A4A4A 0%, #36426D 100%);
+}
+
+/* css reset */
+
+html, body, input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+@media (orientation: portrait) {
+    
+}
+
+@media (orientation: landscape) {
+    @font-face {
+        font-family: "KarlaRegular";
+        src: url("../fonts/karla/Karla-Regular.ttf");
+    }
+    
+    @font-face {
+        font-family: "KarlaBold";
+        src: url("../fonts/karla/Karla-Bold.ttf");
+    }
+
+    body {
+        background: var(--color-background);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
