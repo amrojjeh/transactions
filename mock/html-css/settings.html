@@ -3,11 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="settings.css">
+    <title>Transactions</title>
 </head>
 <body>
     <main>
-        
+        <div class="settings-wrapper">
+            <div class="settings-header">
+                <h1 class="settings-header__header-1">
+                    Settings
+                </h1>
+                <ul class="settings-header__tabs-container">
+                    <li class="settings-header__tab">
+                        Appearance
+                    </li>
+                    <li class="settings-header__tab">
+                        Accessibility
+                    </li>
+                </ul>
+            </div>
+            <div class="settings-body">
+                <div class="settings-body__main-colors">
+                    <h1 class="settings-body__header-1">
+                        Main Colors
+                    </h1>
+                    <div class="settings-body__main-colors__options">
+                        <div>
+                            <input
+                                class="settings-body__main-colors__color-selection"
+                                type="color"
+                                name="color_1"
+                                value="#B1B9DB">
+                            <label
+                                class="selection-body__label"
+                                for="color_1">
+                                Selection
+                            </label>
+                        </div>
+                        <div>
+                            <input class="settings-body__main-colors__color-selection" type="color" name="color_2" value="#35FF6E">
+                            <label class="selection-body__label" for="color_2">Button</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-body__dark-mode">
+                    <h1 class="settings-body__header-1">
+                        Dark Mode
+                    </h1>
+                    <div class="settings-body__dark-mode__options">
+                        <div>
+                            <input class="settings-body__radio" type="radio" name="dark-mode">
+                            <label class="selection-body__label" for="dark-mode" class="settings-body__label">On</label>
+                        </div>
+                        <div>
+                            <input class="settings-body__radio" type="radio" name="dark-mode">
+                            <label class="selection-body__label" for="dark-mode" class="settings-body__label">Off</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>

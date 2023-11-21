@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="transaction.css">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>Transactions</title>
@@ -53,12 +55,17 @@
                         viewBox="0 0 24 24">
                         <path d="M7,10L12,15L17,10H7Z" />
                     </svg>
+                    <div class="application-header__dropdown-menu">
+                        <div class="dropdown-menu-content">
+                            Test
+                        </div>
+                    </div>
                 </div>
             </header>
             <section class="application-body">
-                <div class="application__left-bar">
+                <div class="application-body__left-bar">
                     <div class="results-filter">
-                        <h6 class="results-filter__header-6">Accounts</h6>
+                        <h6 class="results-filter__header">Accounts</h6>
                         <div class="results-filter__accounts">
                             <!-- sample accounts. -->
                             <label for="date" class="results-filter__label">
@@ -85,7 +92,7 @@
                             <div class="results-filter__accounts-add">
                                 <button class="results-filter__accounts-add__button">
                                     <svg
-                                    class="results-filter__acounts-add__icon"
+                                    class="results-filter__acounts-icon"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24">
                                     <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
@@ -94,10 +101,21 @@
                                 <div>
                                     Add account
                                 </div>
+                                <button class="results-filter__accounts-subtract__button">
+                                    <svg
+                                        class="results-filter__acounts-icon"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path d="M20 14H4V10H20" />
+                                    </svg>
+                                </button>
+                                <div>
+                                    Remove account
+                                </div>
                             </div>
                         </div>
                         <hr class="results-filter__horizontal-line">
-                        <h6 class="results-filter__header-6">Date</h6>
+                        <h6 class="results-filter__header">Date</h6>
                         <div class="results-filter__date">
                             <label for="date" class="results-filter__label">
                                 <input
@@ -129,23 +147,14 @@
                             <div class="results-filter-carousel__circle"></div>
                         </div>
                     </div>
-                    <!-- <div class="tool-tip">
-                        <h1 class="tool-tip__header-1">Tip #1</h1>
-                        <p class="tool-tip__paragraph">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            Nihil nostrum neque laudantium. Quae vel necessitatibus nam.
-                            Maxime provident, illum, cupiditate mollitia reiciendis autem
-                            sed eaque accusantium quidem, voluptate nobis saepe.
-                        </p>
-                    </div> -->
                 </div>
                 <section class="application-body__table-wrapper">
                     <div class="application-body__table-titles">
-                        <div>Tags</div>
-                        <div>Date</div>
-                        <div>Account</div>
-                        <div>Merchant</div>
-                        <div>Amount</div>
+                        <div class="table-title">Tags</div>
+                        <div class="table-title">Date</div>
+                        <div class="table-title">Account</div>
+                        <div class="table-title">Merchant</div>
+                        <div class="table-title">Amount</div>
                     </div>
                     <div class="application-body__table-rows">
                         <!-- sample table rows and columns. -->
@@ -187,14 +196,17 @@
                         <div class="table-row"></div>
                         <div class="table-row"></div>
                     </div>
-                    <div class="applicaiton-footer">
+                    <div class="application-footer">
                         <button class="application-footer__button">
                             New transaction
                         </button>
                     </div>
                 </section>
-                <div class="application__right-bar">
-                    <div class="application__right-bar__separator">
+                <div class="application-body__right-bar">
+                    <div class="application-body__right-bar__separator">
+                    </div>
+                    <div class="application-body__right-bar__body">
+
                     </div>
                 </div>
             </section>

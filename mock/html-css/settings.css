@@ -1,0 +1,137 @@
+:root {
+    --color-ui-input-border: #BEBEBE;
+
+    --color-background: linear-gradient(180deg, #4A4A4A 0%, #36426D 100%);
+}
+
+/* css reset */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body, input {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html {
+    font-family: "KarlaRegular";
+    font-style: normal;
+    font-weight: 100;
+    padding: 2rem 4rem 2rem 4rem;
+}
+
+body {
+    background: var(--color-background);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+textarea:focus, .login-form__input:focus {
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+input[type="color"] {
+    border: none;
+}
+
+@font-face {
+    font-family: "KarlaRegular";
+    src: url("../fonts/karla/Karla-Regular.ttf");
+}
+
+@font-face {
+    font-family: "KarlaBold";
+    src: url("../fonts/karla/Karla-Bold.ttf");
+}
+
+@media (orientation: portrait) {
+    
+}
+
+@media (orientation: landscape) {
+    .settings-wrapper {
+        background: #FFF;
+        border-radius: 10px;
+        display: grid;
+        /* justify-content: center; */
+        align-content: center;
+        padding: 2rem;
+        height: 100vh;
+    }
+
+    .settings-header {
+
+    }
+
+    .settings-header__header-1 {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: normal;
+        letter-spacing: -2.7px;
+        background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: left;
+        cursor: context-menu;
+        font-family: "KarlaBold";
+    }
+
+    .settings-header__tabs-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        padding: 0;
+    }
+
+    .settings-header__tab {
+        font-size: 18px;
+        border-bottom: 2px solid #BEBEBE;
+        padding: 0.5rem;
+    }
+
+    .settings-header__tab:hover {
+        border-bottom: 2px solid #35FF6E;
+        cursor: pointer;
+    }
+
+    .settings-body__header-1 {
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    .settings-body__main-colors__color-selection {
+        width: 32px;
+        height: 32px;
+        border: none;
+    }
+
+    .settings-body__main-colors__color-selection:hover {
+        cursor: pointer;
+    }
+
+    .selection-body__label {
+        font-size: 18px;
+    }
+
+    .settings-body__main-colors {
+
+    }
+
+    .settings-body__main-colors__options {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 1rem;
+    }
+
+    .settings-body__dark-mode__options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
