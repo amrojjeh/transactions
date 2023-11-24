@@ -64,80 +64,121 @@
             </header>
             <section class="application-body">
                 <div class="application-body__left-bar">
-                    <div class="results-filter">
-                        <h6 class="results-filter__header">Accounts</h6>
-                        <div class="results-filter__accounts">
-                            <!-- sample accounts. -->
-                            <label for="date" class="results-filter__label">
-                                <input
-                                    type="checkbox"
-                                    name="date"
-                                    class="results-filter__checkbox"">
-                                Bank of America
-                            </label>
-                            <label for="date" class="results-filter__label">
-                                <input
-                                    type="checkbox"
-                                    name="date"
-                                    class="results-filter__checkbox">
-                                    Discover
-                            </label>
-                            <label for="all" class="results-filter__label">
-                                <input
-                                    type="checkbox"
-                                    name="date"
-                                    class="results-filter__checkbox">
-                                Wells Fargo
-                            </label>
-                            <div class="results-filter__accounts-add">
-                                <button class="results-filter__accounts-add__button">
-                                    <svg
-                                    class="results-filter__acounts-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
-                                    </svg>
-                                </button>
-                                <div>
-                                    Add account
+                    <form class="results-filter">
+                        <div class="results-filter__tab-1">
+                                <h6 class="results-filter__header">Accounts</h6>
+                            <div class="results-filter__accounts">
+                                <div class="results-filter__accounts-selection">
+                                    <label for="date" class="results-filter__label">
+                                        <input
+                                            type="checkbox"
+                                            name="date"
+                                            class="results-filter__checkbox"">
+                                        Bank of America
+                                    </label>
+                                    <label for="date" class="results-filter__label">
+                                        <input
+                                            type="checkbox"
+                                            name="date"
+                                            class="results-filter__checkbox">
+                                            Discover
+                                    </label>
+                                    <label for="all" class="results-filter__label">
+                                        <input
+                                            type="checkbox"
+                                            name="date"
+                                            class="results-filter__checkbox">
+                                        Wells Fargo
+                                    </label>
+                                    <label for="all" class="results-filter__label">
+                                        <input
+                                            type="checkbox"
+                                            name="date"
+                                            class="results-filter__checkbox">
+                                        JPMorgan Chase
+                                    </label>
+                                    <label for="all" class="results-filter__label">
+                                        <input
+                                            type="checkbox"
+                                            name="date"
+                                            class="results-filter__checkbox">
+                                        Citibank
+                                    </label>
+                                    <label for="all" class="results-filter__label">
+                                        <input
+                                            type="checkbox"
+                                            name="date"
+                                            class="results-filter__checkbox">
+                                        Capital One
+                                    </label>
                                 </div>
-                                <button class="results-filter__accounts-subtract__button">
-                                    <svg
-                                        class="results-filter__acounts-icon"
+                                <div class="results-filter__input">
+                                    <label for="account-focus" class="results-filter__label">Account Name</label>
+                                    <input class="results-filter__input" type="text" name="account-focus">
+                                </div>
+                                <div class="results-filter__accounts-add">
+                                    <button class="results-filter__icon-button">
+                                        <svg
+                                        class="results-filter__icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 24 24">
-                                        <path d="M20 14H4V10H20" />
-                                    </svg>
-                                </button>
-                                <div>
-                                    Remove account
+                                        <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
+                                        </svg>
+                                    </button>
+                                    <div>
+                                        Add account
+                                    </div>
+                                </div>
+                                <div class="results-filter__accounts-remove">
+                                    <button class="results-filter__icon-button">
+                                        <svg
+                                            class="results-filter__icon"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24">
+                                            <path d="M20 14H4V10H20" />
+                                        </svg>
+                                    </button>
+                                    <div>
+                                        Remove account
+                                    </div>
                                 </div>
                             </div>
+                            <hr class="results-filter__horizontal-line">
+                            <h6 class="results-filter__header">Date</h6>
+                            <div class="results-filter__date">
+                                <label for="date" class="results-filter__label">
+                                    <input
+                                        type="radio"
+                                        name="date"
+                                        class="results-filter__radio"">
+                                    Last 12 months
+                                </label>
+                                <label for="date" class="results-filter__label">
+                                    <input
+                                        type="radio"
+                                        name="date"
+                                        class="results-filter__radio">
+                                    Last month
+                                </label>
+                                <label for="all" class="results-filter__label">
+                                    <input
+                                        type="radio"
+                                        name="date"
+                                        class="results-filter__radio">
+                                    All
+                                </label>
+                            </div>
+                            <div class="results-filter__button-wrapper">
+                                <button class="results-filter__button" type="submit">
+                                    Confirm
+                                </button>
+                            </div>
+                        </form>
+                        <div class="results-filter__tab-2">
+                            
                         </div>
-                        <hr class="results-filter__horizontal-line">
-                        <h6 class="results-filter__header">Date</h6>
-                        <div class="results-filter__date">
-                            <label for="date" class="results-filter__label">
-                                <input
-                                    type="radio"
-                                    name="date"
-                                    class="results-filter__radio"">
-                                Last 12 months
-                            </label>
-                            <label for="date" class="results-filter__label">
-                                <input
-                                    type="radio"
-                                    name="date"
-                                    class="results-filter__radio">
-                                Last month
-                            </label>
-                            <label for="all" class="results-filter__label">
-                                <input
-                                    type="radio"
-                                    name="date"
-                                    class="results-filter__radio">
-                                All
-                            </label>
+                        <div class="results-filter__tab-3">
+
                         </div>
                     </div>
                     <div class="results-filter__carousel-container">

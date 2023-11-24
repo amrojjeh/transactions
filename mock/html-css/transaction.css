@@ -1,13 +1,17 @@
 :root {
-    --color-ui-input-border: #BEBEBE;
-    --color-ui-navigator: #2E2E2F;
+    /* customizable colors */
+    --color-background-primary: #36426D;
+    --color-background: linear-gradient(180deg, #4A4A4A 0%, var(--color-background-primary) 100%);
 
-    --color-background: linear-gradient(180deg, #4A4A4A 0%, #36426D 100%);
+    --color-button: #35FF6E;
+    --color-button-hover: #25A54A;
+
+    --color-selection-first: #b1b9db;
+    --color-selection-second: #7980c5;
 
     color-scheme: light dark;
 }
 
-/* css reset */
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -40,7 +44,7 @@ button {
     cursor: pointer;
 }
 
-textarea:focus, .application-header__search:focus {
+textarea:focus, .application-header__search:focus, .results-filter__input:focus {
     outline: none;
 }
 
@@ -150,6 +154,7 @@ textarea:focus, .application-header__search:focus {
     .application-header__dropdown-menu {
         position: relative;
         display: inline-block;
+        overflow: auto;
     }
 
     .dropdown-menu-content {
@@ -166,7 +171,7 @@ textarea:focus, .application-header__search:focus {
     
     .application-body {
         display: grid;
-        grid-template-columns: minmax(120px, 240px) auto 96px;
+        grid-template-columns: 240px auto 96px;
         height: calc(100vh - 200px);
     }
     
@@ -184,7 +189,6 @@ textarea:focus, .application-header__search:focus {
         text-align: center;
         align-content: center;
         height: 56px;
-        cursor: context-menu;
     }
     
     .application-body__table-rows {
@@ -209,15 +213,6 @@ textarea:focus, .application-header__search:focus {
         color: #000;
     }
 
-    .table-row :first-child {
-        background: #FFF;
-        border: 3px solid #D4D4DA;
-        border-radius: 15px;
-        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-        justify-self: center;
-        padding: 0 1rem;
-    }
-
     .table-row:hover {
         cursor: pointer;
     }
@@ -233,8 +228,8 @@ textarea:focus, .application-header__search:focus {
     }
 
     .table-row:hover {
-        background: #b1b9db;
-        border-bottom: 1px solid #7980c5;
+        background: var(--color-selection-first);
+        border-bottom: 1px solid var(--color-selection-second);
     }
     
     .application-body__left-bar {
@@ -251,53 +246,88 @@ textarea:focus, .application-header__search:focus {
         overflow-y: auto;
     }
 
+    .results-filter__tab-1 {
+        visibility: visible;
+    }
+
+    .results-filter__tab-2 {
+        visibility: hidden;
+    }
+
+    .results-filter__tab-3 {
+        visibility: hidden;
+    }
+
     .results-filter__header {
         font-size: 18px;
     }
 
+    .results-filter__header:hover {
+        cursor: default;
+    }
+
+    .results-filter__label {
+        font-weight: bold;
+        padding-bottom: 0.5rem;
+    }
+
+    .results-filter__input {
+        color: #FFF;
+        width: 100%;
+        background: transparent;
+        border-bottom: 1px solid #FFF;
+    }
+
+    .results-filter__button-wrapper {
+        display: grid;
+    }
+
+    .results-filter__button {
+        background: var(--color-button);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        justify-self: center;
+    }
+
+    .results-filter__button:hover {
+        background: var(--color-button-hover);
+    }
+
+    .results-filter__icon-button {
+        background: none;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+    }
+
     .results-filter__accounts {
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
         row-gap: 0.5rem;
         font-family: "KarlaRegular";
         align-items: center;
     }
 
-    .results-filter__accounts-add {
+    .results-filter__accounts-selection {
+        overflow-y: auto;
+        height: 148px;
+    }
+
+    .results-filter__accounts-selection label {
+        display: block;
+        padding-bottom: 0.5rem;
+    }
+
+    .results-filter__accounts-add, .results-filter__accounts-remove {
         display: grid;
         grid-template-columns: 24px 1fr;
     }
 
-    .results-filter__acounts-icon {
+    .results-filter__icon {
         fill: #FFF;
-        width: 24px;
-        height: 24px;
-    }
-
-    .results-filter__accounts-add__button {
-        color: #FFF;
-        background: none;
-        font-size: 18px;
-        cursor: pointer;
-        border: none;
-        padding: 0;
-    }
-
-    .results-filter__accounts-add__button:hover {
-        color: #a0a0a0;
-    }
-
-    .results-filter__accounts-subtract__button {
-        color: #FFF;
-        background: none;
-        font-size: 18px;
-        cursor: pointer;
-        border: none;
-        padding: 0;
-    }
-
-    .results-filter__accounts-subtract__button:hover {
-        color: #a0a0a0;
+        width: 1rem;
+        height: 1rem;
     }
     
     .results-filter__horizontal-line {
@@ -309,8 +339,8 @@ textarea:focus, .application-header__search:focus {
     .results-filter__date {
         display: grid;
         grid-template-rows: repeat(3, 1fr);
-        row-gap: 0.5rem;
         font-family: "KarlaRegular";
+        padding-bottom: 0.5rem;
     }
 
     .results-filter__checkbox {
@@ -372,6 +402,7 @@ textarea:focus, .application-header__search:focus {
     }
 
     .results-filter__carousel-container {
+
     }
 
     .results-filter__carousel {
@@ -415,17 +446,17 @@ textarea:focus, .application-header__search:focus {
     
     .application-footer {
         background: #2E2E2E;
-        display: grid;
+        display: grid; 
         justify-items: end;
     }
 
     .application-footer__button {
-        background: #35FF6E;
+        background: var(--color-button);
         border: none;
     }
 
     .application-footer__button:hover {
-        background: #25A54A;
+        background: var(--color-button-hover);
         align-content: end;
     }
 }

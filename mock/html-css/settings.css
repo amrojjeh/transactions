@@ -4,7 +4,6 @@
     --color-background: linear-gradient(180deg, #4A4A4A 0%, #36426D 100%);
 }
 
-/* css reset */
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -84,8 +83,7 @@ input[type="color"] {
     }
 
     .settings-header__tabs-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: table;
         align-items: center;
         padding: 0;
     }
