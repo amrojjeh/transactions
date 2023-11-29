@@ -18,10 +18,8 @@ html {
     font-family: "KarlaRegular";
     font-style: normal;
     font-weight: 100;
+    font-size: 18px;
     padding: 2rem 4rem 2rem 4rem;
-}
-
-body {
     background: var(--color-background);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -83,7 +81,7 @@ input[type="color"] {
     }
 
     .settings-header__tabs-container {
-        display: table;
+        display: flex;
         align-items: center;
         padding: 0;
     }
@@ -99,15 +97,18 @@ input[type="color"] {
         cursor: pointer;
     }
 
+    .settings-body__tab-appearance {
+        visibility: visible;
+    }
+
     .settings-body__header-1 {
         font-size: 24px;
         font-weight: normal;
     }
 
     .settings-body__main-colors__color-selection {
-        width: 32px;
-        height: 32px;
-        border: none;
+        width: 24px;
+        height: 24px;
     }
 
     .settings-body__main-colors__color-selection:hover {
@@ -118,8 +119,33 @@ input[type="color"] {
         font-size: 18px;
     }
 
-    .settings-body__main-colors {
+    .settings-body__radio {
+        appearance: none;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 2px solid #424242;
+        background: #424242;
+        border-radius: 100px;
+    }
 
+    .settings-body__radio:hover {
+        background: #AAAAAA;
+        border: 2px solid #AAAAAA;
+        cursor: pointer;
+    }
+    
+    .settings-body__radio:checked {
+        content: "";
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 2px solid #2E2E2F;
+        background: #FFF;
+        border-radius: 100px;
+    }
+
+    .settings-body__radio:checked:hover {
+        border: 2px solid #424242;
+        background: #AAAAAA;
     }
 
     .settings-body__main-colors__options {
@@ -129,7 +155,7 @@ input[type="color"] {
     }
 
     .settings-body__dark-mode__options {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        gap: 1rem;
     }
 }

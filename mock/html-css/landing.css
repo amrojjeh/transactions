@@ -1,0 +1,98 @@
+:root {
+    /* customizable colors */
+    --color-background-primary: #36426D;
+    --color-background: linear-gradient(180deg, #4A4A4A 0%, var(--color-background-primary) 100%);
+    --color-results-filter-background-primary: #32579E;
+    --color-results-filter-background: linear-gradient(180deg, #2D2E2E 0%, var(--color-results-filter-background-primary) 100%);
+
+    --color-button: #35FF6E;
+    --color-button-hover: #25A54A;
+
+    --color-selection-first: #b1b9db;
+    --color-selection-second: #7980c5;
+
+    color-scheme: light dark;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body, input {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html {
+    font-family: "KarlaRegular";
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-background);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+button {
+    font-family: "KarlaRegular";
+    font-size: 16px;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+textarea:focus, .application-header__search:focus, .results-filter__input:focus {
+    outline: none;
+}
+
+@media (orientation: portrait) {
+    
+}
+
+@media (orientation: landscape) {
+    @font-face {
+        font-family: "KarlaRegular";
+        src: url("../fonts/karla/Karla-Regular.ttf");
+    }
+    
+    @font-face {
+        font-family: "KarlaBold";
+        src: url("../fonts/karla/Karla-Bold.ttf");
+    }
+
+    .nav-bar__site-name {
+        font-size: 24px;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: -2.7px;
+        background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        cursor: context-menu;
+        font-family: "KarlaBold";
+    }
+
+    .nav-bar {
+        display: flex;
+        background: white;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-bar__link {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .nav-bar__account-wrapper {
+        margin-left: auto;
+    }
+}

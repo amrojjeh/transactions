@@ -12,6 +12,12 @@ body, html {
     border: none;
 }
 
+html {
+    font-family: "KarlaRegular";
+    font-style: normal;
+    font-weight: 100;
+}
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -21,11 +27,6 @@ body, html {
 }
 
 @media (orientation: landscape) {
-    html {
-        font-family: "KarlaRegular";
-        font-style: normal;
-        font-weight: 100;
-    }
     
     @font-face {
         font-family: "KarlaRegular";

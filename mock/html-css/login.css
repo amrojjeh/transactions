@@ -19,9 +19,6 @@ html {
     font-family: "KarlaRegular";
     font-style: normal;
     font-weight: 100;
-}
-
-body {
     background: var(--color-background);
     background-repeat: no-repeat;
     background-attachment: fixed;
