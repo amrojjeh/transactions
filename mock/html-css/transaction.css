@@ -197,7 +197,6 @@ textarea:focus, .application-header__search:focus, .results-filter__input:focus 
     }
     
     .application-body__table-wrapper {
-        background: #3F3F3F;
     }
 
     .application-body__table {
@@ -228,6 +227,8 @@ textarea:focus, .application-header__search:focus, .results-filter__input:focus 
 
     .application-body__table-body {
         overflow-y: auto;
+        height: 100vh;
+        background: #3F3F3F;
         max-height: calc(100vh - (0.5rem + 200px));
     }
     .application-body__table-item {
