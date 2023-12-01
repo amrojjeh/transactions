@@ -59,6 +59,7 @@ button {
     font-size: 16px;
     padding: 0.8rem;
     cursor: pointer;
+    border: none;
 }
 
 textarea:focus, .application-header__search:focus, .results-filter__input:focus {
@@ -185,6 +186,7 @@ textarea:focus, .application-header__search:focus, .results-filter__input:focus 
         overflow-y: auto;
     }
 
+    /* dropdown list */
     .dropdown-menu-content {
         display: none;
         position: absolute;
@@ -288,8 +290,6 @@ textarea:focus, .application-header__search:focus, .results-filter__input:focus 
 
     .results-filter__tab-1 {
         /* display: none; */
-        resize: both;
-
     }
 
     .results-filter__tab-2 {

@@ -5,90 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="settings.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <script type="text/javascript" src="htmx@1.9.6.min.js"></script>
     <title>Transactions</title>
 </head>
 <body>
-    <main>
-        <div class="settings-wrapper">
-            <div class="settings-header">
-                <h1 class="settings-header__header-1">
-                    Settings
-                </h1>
-                <ul class="settings-header__tabs-container">
-                    <li class="settings-header__tab">
-                        Appearance
-                    </li>
-                    <li class="settings-header__tab">
-                        Accessibility
-                    </li>
-                </ul>
-            </div>
-            <div class="settings-body__tab-appearance">
-                <div class="settings-body">
-                    <div class="settings-body__main-colors">
-                        <h1 class="settings-body__header-1">
-                            Main Colors
-                        </h1>
-                        <div class="settings-body__main-colors__options">
-                            <div>
-                                <input
-                                    class="settings-body__main-colors__color-selection"
-                                    type="color"
-                                    name="color_1"
-                                    value="#B1B9DB">
-                                <label
-                                    class="selection-body__label"
-                                    for="color_1">
-                                    Selection
-                                </label>
-                            </div>
-                            <div>
-                                <input
-                                    class="settings-body__main-colors__color-selection"
-                                    type="color" name="color_2"
-                                    value="#35FF6E">
-                                <label 
-                                    class="selection-body__label"
-                                    for="color_2">
-                                    Button
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="settings-body__dark-mode">
-                        <h1 class="settings-body__header-1">
-                            Dark Mode
-                        </h1>
-                        <div class="settings-body__dark-mode__options">
-                            <div>
-                                <input
-                                    class="settings-body__radio"
-                                    type="radio"
-                                    name="dark-mode">
-                                <label
-                                    class="selection-body__label"
-                                    for="dark-mode"
-                                    class="settings-body__label">
-                                    On
-                                </label>
-                            </div>
-                            <div>
-                                <input
-                                    class="settings-body__radio"
-                                    type="radio"
-                                    name="dark-mode">
-                                <label 
-                                    class="selection-body__label"
-                                    for="dark-mode"
-                                    class="settings-body__label">
-                                    Off
-                                </label>
-                            </div>
-                        </div>
+    <main class="settings-wrapper">
+        <header class="application-header">
+            <div class="application-header__user-profile-wrapper">
+                <svg
+                    class="application-header__user-profile-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24">
+                    <path d="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                </svg>
+                <button class="application-header__user-profile-button">
+                    SampleUser
+                </button>
+                <svg
+                    class="application-header__user-profile-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24">
+                    <path d="M7,10L12,15L17,10H7Z" />
+                </svg>
+                <div class="application-header__dropdown-menu">
+                    <div class="dropdown-menu-content">
+                        Test
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
+        <section class="settings-body">
+            <div class="settings-body__page-header">
+                <div class="settings-body__page-header-text-wrapper">
+                    <h1 class="settings-body__header-1">
+                        Settings
+                    </h1>
+                    <!-- random sub-header text -->
+                    <h6 class="settings-body__sub-header-6">
+                        Personalize your program.
+                    </h6>
+                    <hr class="settings-body__horizontal-line">
+                </div>
+                <div class="settings-body__tabs-wrapper">
+                    <button class="settings-body__selection-tab">
+                        Appearance
+                    </button>
+                    <button class="settings-body__selection-tab">
+                        Accessibility
+                    </button>
+                </div>
+            </div>
+            <form action="submit" class="settings-body__options-wrapper">
+                <div class="settings-body__tab-1">
+                    <h2 class="settings-body__header-2">
+                        Main Colors
+                    </h2>
+                    <div class="settings-body__selection">
+                        <div class="settings-body__form-item-wrapper">
+                            <input
+                                type="color"
+                                name="color_skin"
+                                class="settings-body__color"
+                            >
+                            <label
+                            for="color_skin"
+                            class="settings-body__label"
+                            >
+                            ???
+                            </label>
+                        </div>
+                        <div class="settings-body__form-item-wrapper">
+                            <input
+                                type="color"
+                                name="color_skin"
+                                class="settings-body__color"
+                            >
+                            <label
+                            for="color_skin"
+                            class="settings-body__label"
+                            >
+                            Button
+                            </label>
+                        </div>
+                        <div class="settings-body__form-item-wrapper">
+                            <input
+                                type="color"
+                                name="color_skin"
+                                class="settings-body__color"
+                            >
+                            <label
+                            for="color_skin"
+                            class="settings-body__label"
+                            >
+                            Selection
+                            </label>
+                        </div>
+                        <div class="settings-body__form-item-wrapper">
+                            <input
+                                type="color"
+                                name="color_skin"
+                                class="settings-body__color"
+                            >
+                            <label
+                            for="color_skin"
+                            class="settings-body__label"
+                            >
+                            Scheme
+                            </label>
+                        </div>
+                        <div class="settings-body__form-item-wrapper">
+                            <input
+                                type="color"
+                                name="color_skin"
+                                class="settings-body__color"
+                            >
+                            <label
+                            for="color_skin"
+                            class="settings-body__label"
+                            >
+                            ???
+                            </label>
+                        </div>
+                    </div>
+                    <h2 class="settings-body__header-2">
+                        Dark Mode
+                    </h2>
+                    <div class="settings-body__boolean-radio-container">
+                        <div class="settings-body__form-item-wrapper">
+                            <input
+                                type="radio"
+                                name="dark-mode"
+                                class="settings-body__radio"
+                            >
+                            </input>
+                            <label
+                            for="dark-mode"
+                            class="settings-body__label"
+                            >
+                            On
+                            </label>
+                        </div>
+                        <div class="settings-body__form-item-wrapper">
+                            <input
+                                type="radio"
+                                name="dark-mode"
+                                class="settings-body__radio"
+                                checked
+                            >
+                            </input>
+                            <label
+                            for="dark-mode"
+                            class="settings-body__label"
+                            >
+                            Off
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-body__tab-2">
+                    tab 2
+                </div>
+                <div class="settings-body__tab-3">
+                    tab 3
+                </div>
+                <!-- form end. -->
+                <button
+                    class="settings-body__button"
+                    type="submit"
+                    title="Confirm your filter."
+                >
+                    Confirm
+                </button>
+            </form>
+        </section>
     </main>
 </body>
 </html>

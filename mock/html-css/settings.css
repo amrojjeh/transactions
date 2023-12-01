@@ -1,7 +1,33 @@
 :root {
-    --color-ui-input-border: #BEBEBE;
+    /* ui colors: applicaiton-skin */
+    --color-scheme-main: #FFF;
+    --color-scheme-text: #000;
+    --color-scheme-header-text: #33579D;
+    --color-scheme-icon: #2E2E2E;
+    --color-background-primary: #36426D;
+    --color-background: linear-gradient(180deg, #4A4A4A 0%, var(--color-background-primary) 100%);
+    --color-results-filter-background-primary: #32579E;
+    --color-results-filter-background: linear-gradient(180deg, #2D2E2E 0%, var(--color-results-filter-background-primary) 100%);
 
-    --color-background: linear-gradient(180deg, #4A4A4A 0%, #36426D 100%);
+    /* ui colors: button */
+    --color-button: #35FF6E;
+    --color-button-hover: #25A54A;
+
+    /* ui colors: table */
+    --color-scheme-table-column-odd: #FFF;
+    --color-scheme-table-column-even: #DDD;
+    --color-scheme-table-border: #CCC;
+    --color-selection-first: #b1b9db;
+    --color-selection-second: #7980c5;
+
+    /* ui colors: extras */
+    --color-scheme-card: #5182DF;
+    --color-scheme-card-hover: #3E69BB;
+
+    /* ui color scheme: light and dark theme */
+    color-scheme: light dark;
+
+    /* ui fonts: application font */
 }
 
 *, *:before, *:after {
@@ -19,10 +45,24 @@ html {
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
-    padding: 2rem 4rem 2rem 4rem;
     background: var(--color-background);
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+button {
+    font-family: "KarlaRegular";
+    font-size: 16px;
+    padding: 0.8rem;
+    cursor: pointer;
+    border: none;
 }
 
 textarea:focus, .login-form__input:focus {
@@ -53,57 +93,140 @@ input[type="color"] {
 
 @media (orientation: landscape) {
     .settings-wrapper {
-        background: #FFF;
-        border-radius: 10px;
         display: grid;
-        /* justify-content: center; */
+        grid-template-rows: 72px 1fr;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .application-header {
+        display: flex;
+        border-radius: 10px 10px 0px 0px;
+        align-items: center;
+        background: var(--color-scheme-main);
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid #DCDCDC;
+        column-gap: 1rem;
+        z-index: 1;
+    }
+
+    .application-header__user-profile-wrapper {
+        display: grid;
+        grid-template-columns: 20px auto 20px;
         align-content: center;
+        justify-content: center;
+        margin-left: auto;
+    }
+
+    .application-header__user-profile-icon {
+        fill: #2E2E2E;
+        width: 24px;
+        height: 24px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .application-header__user-profile-button {
+        background: none;
+        border: none;
+        font-size: 18px;
+    }
+
+    .application-header__user-profile-button:hover {
+        cursor: pointer;
+    }
+
+    /* dropdown list */
+    .application-header__user-profile-button:hover .dropdown-content {
+        display: block;
+    }
+
+    .application-header__dropdown-menu {
+        position: relative;
+        display: flex;
+        overflow-y: auto;
+    }
+
+    .dropdown-menu-content {
+        display: none;
+        position: absolute;
+        background: var(--color-scheme-main);
+        padding: 1rem;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+
+    .settings-body {
+        display: grid;
+        grid-template-rows: auto, 1.6fr;
+        row-gap: 1rem;
+        background: var(--color-scheme-main);
+        border-radius: 0 0 10px 10px;
         padding: 2rem;
         height: 100vh;
     }
 
-    .settings-header {
-
+    .settings-body__page-header {
+        
     }
 
-    .settings-header__header-1 {
+    .settings-body__page-header-text-wrapper {
+        padding: 1rem;
+    }
+
+    .settings-body__header-1 {
+        font-family: "KarlaBold";
         font-size: 36px;
         font-weight: bold;
         line-height: normal;
         letter-spacing: -2.7px;
-        background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
+        text-align: left;
+        background: linear-gradient(180deg, #2E2E2F 0%, var(--color-scheme-header-text) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-align: left;
-        cursor: context-menu;
-        font-family: "KarlaBold";
+        cursor: default;
     }
 
-    .settings-header__tabs-container {
+    .settings-body__header-2 {
+        font-family: "KarlaRegular";
+        font-weight: normal;
+        font-size: 24px;
+    }
+
+    .settings-body__sub-header-6 {
+        font-family: "KarlaRegular";
+        font-size: 16px;
+        font-weight: normal;
+        color: #6D6D6D;
+        display: grid;
+        align-self: baseline;
+        cursor: context-menu;
+    }
+
+    .settings-body__tabs-wrapper {
         display: flex;
         align-items: center;
         padding: 0;
     }
 
-    .settings-header__tab {
+    .settings-body__selection-tab {
         font-size: 18px;
         border-bottom: 2px solid #BEBEBE;
         padding: 0.5rem;
+        background: none;
     }
 
-    .settings-header__tab:hover {
+    .settings-body__selection-tab:hover {
         border-bottom: 2px solid #35FF6E;
         cursor: pointer;
-    }
-
-    .settings-body__tab-appearance {
-        visibility: visible;
-    }
-
-    .settings-body__header-1 {
-        font-size: 24px;
-        font-weight: normal;
     }
 
     .settings-body__main-colors__color-selection {
@@ -115,10 +238,31 @@ input[type="color"] {
         cursor: pointer;
     }
 
-    .selection-body__label {
-        font-size: 18px;
+    .settings-body__form-item-wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+        padding: 0.2rem;
     }
 
+    .settings-body__label {
+        font-size: 18px;
+        align-self: center;
+    }
+
+    .settings-body__button {
+        background: var(--color-button);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .settings-body__button:hover {
+        background: var(--color-button-hover);
+        box-shadow: none;
+    }
+
+    /* ui custom: radio */
     .settings-body__radio {
         appearance: none;
         width: 0.8rem;
@@ -148,14 +292,52 @@ input[type="color"] {
         background: #AAAAAA;
     }
 
-    .settings-body__main-colors__options {
+    .settings-body__options__main-colors {
         display: grid;
         grid-template-rows: repeat(2, 1fr);
         row-gap: 1rem;
     }
 
-    .settings-body__dark-mode__options {
+    .settings-body__options__dark-mode {
         display: flex;
         gap: 1rem;
+    }
+
+    .settings-body__tab-1 {
+        /* display: none; */
+    }
+
+    .settings-body__tab-2 {
+        display: none;
+    }
+
+    .settings-body__tab-3 {
+        display: none;
+    }
+    
+    .settings-body__color {
+        width: 32px;
+        height: 32px;
+    }
+
+    .settings-body__label {
+    }
+
+    .settings-body__selection {
+        height: 160px;
+        width: 320px;
+        overflow-y: auto;
+    }
+
+    .settings-body__boolean-radio-container {
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .settings-body__horizontal-line {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #DCDCDC;
     }
 }
