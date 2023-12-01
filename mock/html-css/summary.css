@@ -1,27 +1,68 @@
 :root {
-    --color-ui-input-border: #BEBEBE;
-    --color-ui-navigator: #2E2E2F;
+    /* ui colors: applicaiton-skin */
+    --color-scheme-main: #FFF;
+    --color-scheme-text: #000;
+    --color-scheme-header-text: #33579D;
+    --color-scheme-icon: #2E2E2E;
+    --color-background-primary: #36426D;
+    --color-background: linear-gradient(180deg, #4A4A4A 0%, var(--color-background-primary) 100%);
+    --color-results-filter-background-primary: #32579E;
+    --color-results-filter-background: linear-gradient(180deg, #2D2E2E 0%, var(--color-results-filter-background-primary) 100%);
 
-    --color-background: linear-gradient(180deg, #4A4A4A 0%, #36426D 100%);
+    /* ui colors: button */
+    --color-button: #35FF6E;
+    --color-button-hover: #25A54A;
+
+    /* ui colors: table */
+    --color-scheme-table-column-odd: #FFF;
+    --color-scheme-table-column-even: #DDD;
+    --color-scheme-table-border: #CCC;
+    --color-selection-first: #b1b9db;
+    --color-selection-second: #7980c5;
+
+    /* ui colors: extras */
+    --color-scheme-card: #4264a3;
+    --color-scheme-card-hover: #355288;
+
+    /* ui color scheme: light and dark theme */
+    color-scheme: light dark;
+
+    /* ui fonts: application font */
+
 }
 
-/* css reset */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 
 html, body, input {
     margin: 0;
     padding: 0;
     border: none;
-    height: 100%;
 }
 
 html {
+    font-family: "KarlaRegular";
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
     background: var(--color-background);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-*, *:before, *:after {
-    box-sizing: border-box;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+button {
+    font-family: "KarlaRegular";
+    font-size: 16px;
+    padding: 0.8rem;
+    cursor: pointer;
 }
 
 @media (orientation: portrait) {
@@ -37,5 +78,189 @@ html {
     @font-face {
         font-family: "KarlaBold";
         src: url("../fonts/karla/Karla-Bold.ttf");
+    }
+
+    .summary-wrapper {
+        display: grid;
+        grid-template-rows: 72px 1fr;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .application-header {
+        display: flex;
+        border-radius: 10px 10px 0px 0px;
+        align-items: center;
+        background: var(--color-scheme-main);
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid #DCDCDC;
+        column-gap: 1rem;
+        z-index: 1;
+    }
+
+    .application-header__user-profile-wrapper {
+        display: grid;
+        grid-template-columns: 20px auto 20px;
+        align-content: center;
+        justify-content: center;
+        margin-left: auto;
+    }
+
+    .application-header__user-profile-icon {
+        fill: #2E2E2E;
+        width: 24px;
+        height: 24px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .application-header__user-profile-button {
+        background: none;
+        border: none;
+        font-size: 18px;
+    }
+
+    .application-header__user-profile-button:hover {
+        cursor: pointer;
+    }
+
+    /* dropdown list */
+    .application-header__user-profile-button:hover .dropdown-content {
+        display: block;
+    }
+
+    .application-header__dropdown-menu {
+        position: relative;
+        display: flex;
+        overflow-y: auto;
+    }
+
+    .dropdown-menu-content {
+        display: none;
+        position: absolute;
+        /* right: 0; */
+        background: var(--color-scheme-main);
+        padding: 1rem;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+
+    .summary-body {
+        display: grid;
+        row-gap: 0.5em;
+        background: var(--color-scheme-main);
+        border-radius: 0 0 10px 10px;
+        padding: 2rem;
+        height: 100vh;
+    }
+
+    .summary-body__page-header-text-wrapper {
+        padding: 1rem;
+    }
+
+    .summary-body__horizontal-line {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #DCDCDC;
+    }
+
+    .summary-body__header-1 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: -2.7px;
+        background: linear-gradient(180deg, #2E2E2F 0%, var(--color-scheme-header-text) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: left;
+        cursor: default;
+        font-family: "KarlaBold";
+    }
+
+    .summary-body__sub-header-6 {
+        font-family: "KarlaRegular";
+        font-size: 16px;
+        font-weight: normal;
+        color: #6D6D6D;
+        display: grid;
+        align-self: baseline;
+        cursor: context-menu;
+    }
+
+    .summary-body__cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1rem;
+        align-content: baseline;
+    }
+
+    .summary-body__card {
+        display: grid;
+        grid-template-rows: 0.5fr 1.5fr 0.5fr;
+        background: var(--color-scheme-card);
+        border-radius: 10px;
+        color: #FFF;
+        padding: 1rem;
+        align-content: end;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+    }
+
+    .summary-body__card:hover {
+        background: var(--color-scheme-card-hover);
+    }
+
+    .summary-body__card-icon {
+        fill: #FFF;
+        height: 64px;
+        justify-self: end;
+    }
+
+    .summary-body__card-title {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .summary-body__card-count {
+        font-size: 24px;
+        font-style: italic;
+    }
+
+    .summary-body__data-visualization-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .summary-body__data-visualization-selection {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        overflow-x: auto;
+    }
+
+    .summary-body__data-visualization-option {
+        border: none;
+        border-radius: 10px;
+        background: var(--color-button);
+    }
+
+    .summary-body__data-visualization-option:hover {
+        background: var(--color-button-hover);
+    }
+
+    /* ui drawing: visual graphs */
+    .summary-body__data-visualization-frame {
+        border-radius: 10px;
+        background: linear-gradient(180deg, #252525 0%, #2E2E2E 100%);
+        
     }
 }

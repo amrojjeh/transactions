@@ -5,11 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="summary.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <script type="text/javascript" src="htmx@1.9.6.min.js"></script>
     <title>Transactions</title>
 </head>
 <body>
-    <main>
-        
+    <main class="summary-wrapper">
+        <header class="application-header">
+            <div class="application-header__user-profile-wrapper">
+                <svg
+                    class="application-header__user-profile-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24">
+                    <path d="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                </svg>
+                <button class="application-header__user-profile-button">
+                    SampleUser
+                </button>
+                <svg
+                    class="application-header__user-profile-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24">
+                    <path d="M7,10L12,15L17,10H7Z" />
+                </svg>
+                <div class="application-header__dropdown-menu">
+                    <div class="dropdown-menu-content">
+                        Test
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="summary-body">
+            <div class="summary-body__page-header-text-wrapper">
+                <h1 class="summary-body__header-1">
+                    Summary
+                </h1>
+                <!-- random sub-header text -->
+                <h6 class="summary-body__sub-header-6">
+                    Get to know your financial habits.
+                </h6>
+                <hr class="summary-body__horizontal-line">
+            </div>
+            <div class="summary-body__cards-wrapper">
+                <div class="summary-body__card">
+                    <svg
+                        class="summary-body__card-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                    >
+                    <path d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                    </svg>
+                    <h1 class="summary-body__card-title">
+                        Total Transactions
+                    </h1>
+                    <h3 class="summary-body__card-count">
+                        50
+                    </h3>
+                </div>
+                <div class="summary-body__card">
+                    <svg
+                        class="summary-body__card-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                    >
+                    <path d="M11.5,1L2,6V8H21V6M16,10V17H19V10M2,22H21V19H2M10,10V17H13V10M4,10V17H7V10H4Z" />
+                    </svg>
+                    <h1 class="summary-body__card-title">
+                        Total Accounts
+                    </h1>
+                    <h3 class="summary-body__card-count">
+                        5
+                    </h3>
+                </div>
+                <div class="summary-body__card">
+                    <svg
+                        class="summary-body__card-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                    >
+                    <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
+                    </svg>
+                    <h1 class="summary-body__card-title">
+                        Total Amount
+                    </h1>
+                    <h3 class="summary-body__card-count">
+                        $123,456.78
+                    </h3>
+                </div>
+                <div class="summary-body__card">
+                    <svg
+                        class="summary-body__card-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                    >
+                    <path d="M12,18H6V14H12M21,14V12L20,7H4L3,12V14H4V20H14V14H18V20H20V14M20,4H4V6H20V4Z" />
+                    </svg>
+                    <h1 class="summary-body__card-title">
+                        Total Merchants
+                    </h1>
+                    <h3 class="summary-body__card-count">
+                        16
+                    </h3>
+                </div>
+            </div>
+            <div class="summary-body__data-visualization-wrapper">
+                <div class="summary-body__page-header-text-wrapper">
+                    <h1 class="summary-body__header-1">
+                        Quick Facts
+                    </h1>
+                    <div class="summary-body__data-visualization-selection">
+                        <button
+                            class="summary-body__data-visualization-option"
+                        >
+                        Top 10 Transactions
+                        </button>
+                        <button
+                            class="summary-body__data-visualization-option"
+                        >
+                        Top 10 Accounts
+                        </button>
+                        <button
+                            class="summary-body__data-visualization-option"
+                        >
+                        Top 10 Merchants
+                        </button>
+                    </div>
+                </div>
+                <div class="summary-body__data-visualization-frame">
+                    
+                </div>
+            </div>
+            <!-- ... -->
+        </section>
     </main>
 </body>
 </html>
