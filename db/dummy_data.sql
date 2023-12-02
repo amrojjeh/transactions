@@ -60,4 +60,4 @@ VALUES
   ('2023-11-10 22:00:00', '2023-11-10 22:30:00', 10, 2, 'Insurance premium payment', 'Insurance Premiums', -200.00),
   ('2023-11-10 23:00:00', '2023-11-10 23:30:00', 11, 1, 'Vacation fund contribution', 'Vacation Fund', -100.00),
   ('2023-11-11 00:00:00', '2023-11-11 00:30:00', 12, 2, 'Education fund contribution', 'Education Fund', -200.00),
-  ('2023-11-11 01:00:00', '2023-11-11 01:30:00', 13, 1, 'Business income', '
+  ('2023-11-11 01:00:00', '2023-11-11 01:30:00', 13, 1, 'Business income', 'Quarterly Divended', -200.00);
