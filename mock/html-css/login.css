@@ -38,96 +38,90 @@ textarea:focus, .login-form__input:focus {
     src: url("../fonts/karla/Karla-Bold.ttf");
 }
 
-@media (orientation: portrait) {
-    
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 380px);
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    padding: 0.5rem;
+    justify-content: center;
 }
 
-@media (orientation: landscape) {
-    .wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 380px);
-        justify-content: center;
-        align-content: center;
-        height: 100vh;
-        padding: 0.5rem;
-        justify-content: center;
-    }
-    
-    .login-main {
-        background: #FFF;
-        border-radius: 10px 0px 0px 10px;
-        padding: 2rem;
-        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
-    }
-    
-    .login-main__header-1 {
-        font-size: 36px;
-        font-weight: 800;
-        line-height: normal;
-        letter-spacing: -2.7px;
-        background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center;
-        cursor: context-menu;
-        font-family: "KarlaBold";
-    }
-    
-    .login-form__link {
-        color: #636363;
-        text-decoration: none;
-        text-align: right;
-    }
-    
-    .login-form > div {
-        display: grid;
-        grid-template-rows: repeat(auto-fill, 1fr);
-    }
-    
-    .login-form {
-        display: grid;
-        grid-template-rows: repeat(auto-fill, 1fr);
-        row-gap: 3rem;
-        font-size: 18px;
-    }
-    
-    .login-form__button {
-        width: 48px;
-        height: 48px;
-        border-radius: 100%;
-        background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
-        border: none;
-        justify-self: right;
-    }
-    
-    .login-form__button:hover {
-        filter: brightness(1.5);
-        cursor: pointer;
-    }
-    
-    .login-form__button-icon {
-        fill: #FFF;
-        align-self: center;
-        justify-self: center;
-        width: 24px;
-        height: 24px;
-    }
-    
-    .login-form__input {
-        border-bottom: 2px solid #BEBEBE;
-        background: #FFF;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    
-    .login-form__input:valid {
-        border-bottom: 2px solid #71D49F;
-    }
-    
-    .login-support {
-        background: linear-gradient(180deg, #2D2E2E 0%, #32579E 100%);
-        border-radius: 0px 10px 10px 0px;
-        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
-    }
+.login-main {
+    background: #FFF;
+    border-radius: 10px 0px 0px 10px;
+    padding: 2rem;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+}
+
+.login-main__header-1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -2.7px;
+    background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    cursor: context-menu;
+    font-family: "KarlaBold";
+}
+
+.login-form__link {
+    color: #636363;
+    text-decoration: none;
+    text-align: right;
+}
+
+.login-form > div {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1fr);
+}
+
+.login-form {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    row-gap: 3rem;
+    font-size: 18px;
+}
+
+.login-form__button {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
+    border: none;
+    justify-self: right;
+}
+
+.login-form__button:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+
+.login-form__button-icon {
+    fill: #FFF;
+    align-self: center;
+    justify-self: center;
+    width: 24px;
+    height: 24px;
+}
+
+.login-form__input {
+    border-bottom: 2px solid #BEBEBE;
+    background: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-form__input:valid {
+    border-bottom: 2px solid #71D49F;
+}
+
+.login-support {
+    background: linear-gradient(180deg, #2D2E2E 0%, #32579E 100%);
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
 }

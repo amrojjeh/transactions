@@ -66,12 +66,7 @@ textarea:focus, .application-header__search:focus, .results-filter__input:focus 
     outline: none;
 }
 
-@media (orientation: portrait) {
-    
-}
-
-@media (orientation: landscape) {
-    /* @media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
     }
 
     @media (prefers-color-scheme: dark) {
@@ -501,4 +496,3 @@ textarea:focus, .application-header__search:focus, .results-filter__input:focus 
     .application-footer__button:hover {
         background: var(--color-button-hover);
     }
-}

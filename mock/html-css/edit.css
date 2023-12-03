@@ -45,84 +45,78 @@ textarea:focus, .edit-form__input:focus {
     src: url("../fonts/karla/Karla-Bold.ttf");
 }
 
-@media (orientation: portrait) {
-    
+.wrapper {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    padding: 0.5rem;
+    justify-content: center;
 }
 
-@media (orientation: landscape) {
-    .wrapper {
-        display: grid;
-        justify-content: center;
-        align-content: center;
-        height: 100vh;
-        padding: 0.5rem;
-        justify-content: center;
-    }
+.edit-form {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    row-gap: 3rem;
+    background: #FFF;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+    padding: 2rem 10rem 2rem 10rem;
+}
 
-    .edit-form {
-        display: grid;
-        grid-template-rows: repeat(auto-fill, 1fr);
-        row-gap: 3rem;
-        background: #FFF;
-        font-size: 18px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
-        padding: 2rem 10rem 2rem 10rem;
-    }
+.edit-form > div {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1fr);
+}
 
-    .edit-form > div {
-        display: grid;
-        grid-template-rows: repeat(auto-fill, 1fr);
-    }
+.edit-form__header-1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -2.7px;
+    background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    cursor: context-menu;
+    font-family: "KarlaBold";
+}
 
-    .edit-form__header-1 {
-        font-size: 36px;
-        font-weight: 800;
-        line-height: normal;
-        letter-spacing: -2.7px;
-        background: linear-gradient(180deg, #2E2E2F 0%, #33579D 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center;
-        cursor: context-menu;
-        font-family: "KarlaBold";
-    }
+.edit-form__input {
+    border-bottom: 2px solid #BEBEBE;
+    background: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+}
 
-    .edit-form__input {
-        border-bottom: 2px solid #BEBEBE;
-        background: #FFF;
-        font-size: 18px;
-        font-weight: bold;
-    }
+.edit-form__button-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+}
 
-    .edit-form__button-menu {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-    }
+.edit-form__button-menu > button {
+    font-family: "KarlaRegular";
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    padding: 0.8rem;
+}
 
-    .edit-form__button-menu > button {
-        font-family: "KarlaRegular";
-        border-radius: 10px;
-        border: none;
-        font-size: 16px;
-        padding: 0.8rem;
-    }
+.edit-form__primary-button {
+    background: #35FF6E;
+}
 
-    .edit-form__primary-button {
-        background: #35FF6E;
-    }
+.edit-form__primary-button:hover {
+    background: #25A54A;
+}
 
-    .edit-form__primary-button:hover {
-        background: #25A54A;
-    }
+.edit-form__secondary-button {
+    background: #DBDBDB;
+}
 
-    .edit-form__secondary-button {
-        background: #DBDBDB;
-    }
-
-    .edit-form__secondary-button:hover {
-        background: #c2c2c2;
-    }
+.edit-form__secondary-button:hover {
+    background: #c2c2c2;
 }
