@@ -14,6 +14,10 @@ func (app *application) serverError(w http.ResponseWriter, err error) {
 		http.StatusInternalServerError)
 }
 
+func (app *application) clientError(w http.ResponseWriter, code int) {
+	http.Error(w, http.StatusText(code), code)
+}
+
 func (app *application) render(w http.ResponseWriter, page string,
 	data templateData, status int) {
 	tmpl, exists := app.templates[page]

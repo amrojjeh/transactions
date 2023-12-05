@@ -1,20 +1,42 @@
-{{define "title"}}New Transaction{{end}}
+{{define "title"}}New transaction{{end}}
 
 {{define "main"}}
-<h1>New Transaction</h1>
-<form action="/transaction/new" method="POST">
-	Transaction date: <input name="tdate" type="text">
-	<br>
-	Posted date: <input name="pdate" type="text" />
-	<br>
-	From: <input name="from" type="text" />
-	<br>
-	To: <input name="to" type="text" />
-	<br>
-	Context: <input name="context" type="text" />
-	<br>
-	Tags: <input name="tags" type="text" />
-	<br>
-	<button type="submit">Create transaction</button>
-</form>
+<main>
+    <section class="wrapper">
+        <form class="edit-form" action="/transaction/new" method="POST">
+            <h1 class="edit-form__header-1">New Transaction {{if .Form.Valid}}INVALID{{end}}</h1>
+            <div>
+                <label class="edit-form__label" for="tdate">Transaction date</label> 
+                <input class="edit-form__input" value="{{.Form.TDate}}" name="tdate" type="date">
+            </div>
+            <div>
+                <label class="edit-form__label" for="pdate">Posted date</label> 
+                <input class="edit-form__input" value="{{.Form.PDate}}" name="pdate" type="date">
+            </div>
+            <div>
+                <label class="edit-form__label" for="from">From</label> 
+                <input class="edit-form__input" value="{{.Form.FromAccount}}" name="from" type="text">
+            </div>
+            <div>
+                <label class="edit-form__label" for="to">To</label> 
+                <input class="edit-form__input" value="{{.Form.ToAccount}}" name="to" type="text">
+            </div>
+            <div>
+                <label class="edit-form__label" for="amount">amount</label> 
+                <input class="edit-form__input" value="{{.Form.Tags}}" name="amount" type="text">
+            </div>
+            <div>
+                <label class="edit-form__label" for="context">Context</label> 
+                <input class="edit-form__input" value="{{.Form.Context}}" name="context" type="text">
+            </div>
+            <div>
+                <label class="edit-form__label" for="tags">Tags</label> 
+                <input class="edit-form__input" value="{{.Form.Tags}}" name="tags" type="text">
+            </div>
+            <div class="edit-form__button-menu">
+                <button class="edit-form__primary-button" type="submit">Confirm</button>
+            </div>
+        </form>
+    </section>
+</main>
 {{end}}

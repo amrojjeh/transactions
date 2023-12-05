@@ -547,25 +547,20 @@
                 </thead>
                 <tbody class="application-body__table-body">
                     <!-- empty rows -->
+                    {{range .Transactions}}
                     <tr class="application-body__table-item">
-                        <td class="application-body__table-column">A</td>
-                        <td class="application-body__table-column">B</td>
-                        <td class="application-body__table-column">C</td>
-                        <td class="application-body__table-column">D</td>
-                        <td class="application-body__table-column">E</td>
+                        <td class="application-body__table-column">{{.Tags}}</td>
+                        <td class="application-body__table-column">{{.PDate}}</td>
+                        <td class="application-body__table-column">{{.FromAccount}}</td>
+                        <td class="application-body__table-column">{{.ToAccount}}</td>
+                        <td class="application-body__table-column">{{.Amount}}</td>
                     </tr>
-                    <tr class="application-body__table-item">
-                        <td class="application-body__table-column">1</td>
-                        <td class="application-body__table-column">2</td>
-                        <td class="application-body__table-column">3</td>
-                        <td class="application-body__table-column">4</td>
-                        <td class="application-body__table-column">5</td>
-                    </tr>
+                    {{end}}
                 </tbody>
             </table>
             <div class="application-footer">
                 <button class="application-footer__button" type="button">
-                    New transaction
+                    <a href="/transaction/new">New transaction</a>
                 </button>
             </div>
         </section>
